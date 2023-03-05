@@ -25,7 +25,7 @@
         </p>
       </div>
       <div class="p-3 flex items-center justify-between">
-        <a href="meal.strYoutube" target="_blank" class="px-3 py-2 rounded border-2 bg-red-500 mr-2 hover:bg-red-600 border-red-700 text-white transition-colors">Youtube</a>
+        <youtube-button :link="meal.strYoutube">Youtube</youtube-button>
   
       </div>
     </div>
@@ -35,6 +35,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
+import YoutubeButton from "../components/YoutubeButton.vue";
 import store from "../store";
 import {useRoute} from 'vue-router'
 
