@@ -10,7 +10,7 @@
   </div>
   <div class="grid grid-col-1 md:grid-cols-3 gap-3 p-8">
     <div v-for="meal of meals" :key="idMeal" class="mt-5 bg-white shadow rounded-xl">
-     <router-link to="/">
+     <router-link :to="{name:'mealDetails', params:{id: meal.idMeal}}">
       <img
         :src="meal.strMealThumb"
         alt=""

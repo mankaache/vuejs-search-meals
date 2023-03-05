@@ -37,7 +37,7 @@ const routes = [
                 component: GuestLayout
             },
             {
-                path:'/meal/:id',
+                path:'/meal/:id?',
                 name:'mealDetails',
                 component: MealDetails
             },
