@@ -8,15 +8,13 @@
       {{ letter }}
     </router-link>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 p-8">
-    <meal-item :food="meals"></meal-item>
-  </div>
+ <Meals :item="meals"/>
 </template>
 
 <script setup>
 import { computed, onMounted, watch} from "vue";
 import { useRoute } from "vue-router";
-import MealItem from "../components/MealItem.vue";
+import Meals from "../components/Meals.vue";
 import store from "../store";
 
 

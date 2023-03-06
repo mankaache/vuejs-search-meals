@@ -8,17 +8,12 @@
       @change="searchMeals"
     />
   </div>
-  <div class="grid grid-col-1 md:grid-cols-3 gap-3 p-8">
-   
-    <meal-item :food="meals"></meal-item>
-    <!-- <p>{{ meals }}</p> -->
-  </div>
+  <Meals :item="meals"/>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
-import MealItem from "../components/MealItem.vue";
-
+import Meals from "../components/Meals.vue";
 import store from "../store";
 import {useRoute} from 'vue-router'
 

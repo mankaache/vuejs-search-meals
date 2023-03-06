@@ -1,16 +1,11 @@
 <template>
-     <div v-if="!meals.length" class="flex justify-center text-gray-600">
-        There are no meals
-    </div>
-    <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-5 p-8">
-        <meal-item :food="meals"></meal-item>
-    </div>
- 
+    <meals :item="meals"></meals>
 </template>
 
 <script setup>
 import { computed, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
+import Meals from "../components/Meals.vue";
 
 import store from "../store";
 
