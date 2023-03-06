@@ -22,7 +22,12 @@ const meals = computed(() => store.state.searchMeals.data);
 
 const route = useRoute()
 function searchMeals() {
-  store.dispatch("searchMeals", keyword.value);
+  if(keyword.value){
+    store.dispatch("searchMeals", keyword.value);
+  }else{
+    store.commit("setSearchMeals", []);
+  }
+  
 }
 
 onMounted(()=>{

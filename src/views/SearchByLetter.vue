@@ -27,7 +27,12 @@ watch(route,()=>{
 })
 
 onMounted(() => {
-  store.dispatch('mealsByLetter',route.params.letter)
+  if(route.params.letter){
+    store.dispatch('mealsByLetter',route.params.letter)
+  }else{
+    store.commit('setMealsByLetter',[])
+  }
+  
 
 });
 </script>

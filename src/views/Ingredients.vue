@@ -1,6 +1,13 @@
 <template>
     <div class="p-8">
       <h2 class="text-xl font-bold mb-3">ingredients</h2>
+      <input
+      v-model="keyword"
+      type="text"
+      class="rounded border-2 border-gray-200 w-full mb-5"
+      placeholder="Search for Ingredients"
+      
+    />
       <router-link
         v-for="ingredient in ingredients"
         :key="ingredient.idIngredient"
@@ -23,7 +30,7 @@
   
   
   const route = useRoute();
-  
+  const keyword = ref("")
   const ingredients = ref([]);
   
   onMounted(() => {
