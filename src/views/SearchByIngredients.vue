@@ -1,36 +1,23 @@
 <template>
-  <div class="p-8">
-    <h2 class="text-xl font-bold mb-3">ingredients</h2>
-    <router-link
-      :to="{
-        name: 'byIngredients',
-        params: { ingredients: ingredient.idIngredient },
-      }"
-      v-for="ingredient in ingredients"
-      :key="ingredient.idIngredient"
-      class="block cursor-pointer bg-white rounded p-3 mb-3 shadow"
-    >
-      <h3 class="text-2xl font-bold mb-3">{{ ingredient.strIngredient }}</h3>
-      <p>{{ ingredient.strDescription }}</p>
-    </router-link>
-  </div>
+     <div v-if="!meals.length" class="flex justify-center text-gray-600">
+        There are no meals
+    </div>
+    <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-5 p-8">
+        <meal-item :food="meals"></meal-item>
+    </div>
+ 
 </template>
 
 <script setup>
 import { computed, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
-import axiosClient from "../axiosClient";
+
 import store from "../store";
 
 const route = useRoute();
-
-const ingredients = ref([]);
+const meals = computed(()=> store.state.mealsByIngredients)
 
 onMounted(() => {
-  // store.dispatch('mealsByIngredients',route.params.ingredients)
-  axiosClient.get("list.php?i=list").then(({ data }) => {
-    ingredients.value = data.meals;
-    console.log(data.meals);
-  });
+  store.dispatch('mealsByIngredients',route.params.ingredients)
 });
 </script>

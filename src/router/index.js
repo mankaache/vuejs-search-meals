@@ -5,6 +5,7 @@ import SearchByName from '../views/SearchByName.vue'
 import SearchByLetter from '../views/SearchByLetter.vue'
 import SearchByIngredients from '../views/SearchByIngredients.vue'
 import MealDetails from '../views/MealDetails.vue'
+import Ingredients from '../views/Ingredients.vue'
 
 
 
@@ -22,7 +23,12 @@ const routes = [
                 component:SearchByName
             },
             {
-                path:'/ingredients/:ingredients?',
+                path:'/ingredients',
+                name:'ingredients',
+                component:Ingredients
+            },
+            {
+                path:'/ingredients/:ingredient',
                 name:'byIngredients',
                 component:SearchByIngredients
             },

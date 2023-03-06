@@ -9,7 +9,7 @@
         <router-link :to="{name:'byLetter'}" class="inline-block transition-colors px-4 h-full hover:bg-purple-500 hover:text-white py-2">
           Meals By Letter
         </router-link>
-        <router-link :to="{name:'byIngredients'}" class="inline-block transition-colors px-4 h-full hover:bg-purple-500 hover:text-white py-2">
+        <router-link :to="{name:'ingredients'}" class="inline-block transition-colors px-4 h-full hover:bg-purple-500 hover:text-white py-2">
           Meals By ingredients
         </router-link>
       </div>
