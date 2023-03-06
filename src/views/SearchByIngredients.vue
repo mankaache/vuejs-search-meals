@@ -13,6 +13,8 @@ const route = useRoute();
 const meals = computed(()=> store.state.mealsByIngredients)
 
 onMounted(() => {
-  store.dispatch('mealsByIngredients',route.params.ingredients)
+  store.dispatch('mealsByIngredients', route.params.ingredient)
+  console.log(store.dispatch('mealsByIngredients',route.params.ingredient)
+)
 });
 </script>
