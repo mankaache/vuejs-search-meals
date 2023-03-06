@@ -16,7 +16,7 @@ export function mealsByLetter ({commit},keyLetter){
     })
 
 }
-export function  mealsByIngredients ({commit},keyIngredient){
+export function mealsByIngredients ({commit},keyIngredient){
     axiosClient.get(`filter.php?i=${keyIngredient}`)
     .then( ({data})=>{
         // debugger
