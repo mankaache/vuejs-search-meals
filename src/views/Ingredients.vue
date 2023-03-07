@@ -9,7 +9,7 @@
       
     />
       <router-link
-        v-for="ingredient in ingredients"
+        v-for="ingredient in computedIngredients"
         :key="ingredient.idIngredient"
         class="block cursor-pointer bg-white rounded p-3 mb-3 shadow" 
         :to="{
@@ -32,6 +32,14 @@
   const route = useRoute();
   const keyword = ref("")
   const ingredients = ref([]);
+
+  const computedIngredients = computed(()=>{
+    if(!computedIngredients) return ingredients
+    return ingredients.value.filter(i=>
+    i.strIngredient.toLowerCase().includes(keyword.value.toLowerCase()))
+
+    
+  })
   
   onMounted(() => {
     axiosClient.get("list.php?i=list").then(({ data }) => {

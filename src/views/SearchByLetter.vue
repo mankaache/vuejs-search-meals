@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center gap-2 mt-10">
     <router-link
-      class="text-2xl font-semibold"
+      class="text-lg letter"
       :to="{ name: 'byLetter', params: { letter } }"
       v-for="letter in letters"
       :key="letter"
@@ -36,3 +36,11 @@ onMounted(() => {
 
 });
 </script>
+
+<style>
+@media screen and (max-width:650px) {
+.letter{
+  word-wrap: break-word;
+}
+}
+</style>

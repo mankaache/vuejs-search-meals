@@ -1,7 +1,23 @@
 <template>
-  <div class="flex w-full h-[450px] p-8 justify-center items-center flex-col">
-    <div class="text-xl w-[500px] h-32 shadow bg-purple-200 p-6 text-gray-600 font-semibold text-center justify-center items-center flex">
-          Search meals according to categories listed in the Navbar
-    </div>
-  </div>
+  <h1 class="text-orange-600 font-bold px-8 pt-4 text-5xl md:text-xl">Random Meals</h1>
+  <Meals :item="meals"/>
 </template>
+
+<script setup>
+  import { onMounted, ref } from 'vue';
+import axiosClient from '../axiosClient';
+import Meals from '../components/Meals.vue';
+
+  const meals = ref([])
+
+  onMounted(async () =>{
+    for(let i = 0; i < 10; i++){
+      axiosClient.get('random.php')
+      .then(({data})=> meals.value.push(data.meals[0]))
+    }
+  })
+</script>
+
+<style>
+
+</style>
