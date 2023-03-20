@@ -1,6 +1,6 @@
 <template>
     <div class="p-8">
-      <h2 class="text-xl font-bold mb-3">ingredients</h2>
+      <h2 class="text-xl md:text-2xl font-bold mb-3">Ingredients</h2>
       <input
       v-model="keyword"
       type="text"
