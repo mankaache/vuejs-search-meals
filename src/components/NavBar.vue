@@ -1,6 +1,6 @@
 <template>
     <header class="bg-white shadow h-16 flex justify-between items-center">
-      <router-link :to="{name: 'home'}" class="home ml-6 font-bold h-full flex items-center px-4 text-red-600  text-2xl">Home</router-link>
+      <router-link :to="{name: 'home'}" class="home ml-6 font-bold h-full flex items-center px-4 text-red-600 text-xl  md:text-3xl">Home</router-link>
       <div class="toggle"></div>
       <div class="links flex gap-1 items-center mr-4">
         <router-link :to="{name:'byName'}" class="lik inline-block transition-colors  px-4 md:h-full hover:bg-red-600  hover:text-white py-2">
