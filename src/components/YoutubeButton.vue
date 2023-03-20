@@ -1,6 +1,6 @@
 <template>
 
-        <a :href="link" target="_blank" class="px-3 py-2 rounded border-2 bg-red-600 mr-2 hover:bg-red-800  border-red-600 text-white transition-colors">
+        <a :href="link" target="_blank" class="px-3 py-2 rounded border-2 bg-red-600 mr-2 hover:bg-red-700 hover:tracking-widest border-red-600 text-white transition-all">
         <slot></slot>
     </a>
 

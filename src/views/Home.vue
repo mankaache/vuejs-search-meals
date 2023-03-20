@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-orange-600 font-bold px-8 pt-4 text-5xl md:text-xl">Random Meals</h1>
+  <h1 class="text-red-600  font-bold px-8 pt-4 md:text-4xl md:mt-6 text-2xl">Random Meals</h1>
   <Meals :item="meals"/>
 </template>
 
